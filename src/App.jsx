@@ -1,9 +1,9 @@
-import { Link, Route,Switch, BrowserRouter as Router } from "react-router-dom";
 import './App.css';
+import { Link, Route,Switch, BrowserRouter as Router } from "react-router-dom";
 import React,{useState} from "react";
 import {Home, Animals} from "./pages"
-import { LoginForm } from "./components";
-
+import { LoginForm, RegisterForm,AuthRoute} from "./components";
+import Navbar from "./core/Navbar"
 export const UserContext=React.createContext(null);
 
 function App() {
@@ -17,19 +17,24 @@ function App() {
   return (
       <Router>
       <UserContext.Provider value={{user,saveUser}}>
-        <Link to="/">
-            <a>Home</a>
-        </Link>
-        <Link to="/animals">
-          <a >Animals</a>
-        </Link>
-        <Link to="/login">
-          <a >Login</a>
-        </Link>
+      {user?(
+        <Navbar></Navbar>
+        ):null}
         <Switch>
           <Route path="/login" component={LoginForm}></Route>
-          <Route exact path="/" component={Home} />
-          <Route path="/animals" component={Animals} />
+          <Route path="/register" component={RegisterForm}></Route>
+          <AuthRoute
+          authenticated={authenticated}
+          path="/"
+          render={(props) => <Home user={user} {...props} />} 
+          ></AuthRoute> 
+          <AuthRoute
+          authenticated={authenticated}
+          path="/animals"
+          render={(props) => <Animals user={user} {...props} />} 
+          ></AuthRoute>
+{/*           <Route path="/" component={Home}></Route>
+          <Route path="/animals" component={Animals}></Route> */}
         </Switch>
         </UserContext.Provider>
       </Router>

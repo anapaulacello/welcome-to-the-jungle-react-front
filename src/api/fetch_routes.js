@@ -11,7 +11,6 @@ export {
     BASE_URL,
     GET_HABITATS,
     GET_ANIMALS,
-
     DELETE_HABITAT,
 
     REGISTER_USER,

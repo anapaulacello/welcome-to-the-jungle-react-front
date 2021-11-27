@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { loginUser } from "../../api/fetch_user";
 import { UserContext } from "../../App";
 import './LoginForm.css'
@@ -41,6 +41,9 @@ const LoginForm = () => {
           name="password"
           placeholder="Password" />
         <button className="login-button" type="submit">Login</button>
+        <Link to="/register">
+          <a className="go-to-register">No tienes cuenta?</a>
+        </Link>
       </form>
     </div>
   );

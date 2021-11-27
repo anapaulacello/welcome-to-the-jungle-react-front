@@ -20,7 +20,7 @@ const RegisterForm = (props) => {
       await registerUser(registerForm);
       setRegisterForm(INITIAL_STATE);
       setError("");
-      history.push("/about");
+      history.push("/");
     } catch (error) {
       setError(error.message);
     }

@@ -4,7 +4,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-background-color: greenyellow;
+background-image: url("https://imgur.com/sZMsTkk.jpg");
+height: 100vh;
 }
 .registerForm{
     display: flex;
@@ -28,10 +29,10 @@ font-size: larger;
     color: white;
     text-align: center;
 }
-.form-control:focus{
+/* .form-control:focus{
     background-color: #a0581a;
     color: white;
-}
+} */
 
 select {
     margin: 4px;
