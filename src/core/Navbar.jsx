@@ -1,7 +1,11 @@
 import React from 'react'
 import {Link} from "react-router-dom"
+import { logout } from '../api/fetch_user';
 
 const Navbar = () => {
+    const logoutsesion =async()=>{
+        await logout()
+      }
     return (
         <>
             <Link to="/">
@@ -12,6 +16,9 @@ const Navbar = () => {
             </Link>
             <Link to="/hebiatats">
                 <button>habitats</button>
+            </Link>
+            <Link to="/logout">
+                <button onClick={logoutsesion}>logout</button>
             </Link>
         </>
     )
