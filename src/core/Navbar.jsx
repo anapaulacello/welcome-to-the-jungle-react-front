@@ -1,16 +1,19 @@
-import React from 'react'
+import React ,{useContext}from 'react'
 import {Link} from "react-router-dom"
 import { logout } from '../api/fetch_user';
-
+import { UserContext } from '../App'
 const Navbar = () => {
+    const {user}=useContext(UserContext);
     const logoutsesion =async()=>{
         await logout()
       }
     return (
         <>
+        {user?(
             <Link to="/">
                 <button>home</button>
             </Link>
+            ):null}
             <Link to="/animals">
                 <button>animals</button>
             </Link>
