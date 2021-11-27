@@ -29,10 +29,9 @@ font-size: larger;
     color: white;
     text-align: center;
 }
-/* .form-control:focus{
-    background-color: #a0581a;
+.form-control{
     color: white;
-} */
+} 
 
 select {
     margin: 4px;

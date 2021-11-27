@@ -29,10 +29,9 @@ font-size: larger;
     color: white;
     text-align: center;
 }
-/* .login-input:focus{
-background-color: #a0581a;
-color: white;
-} */
+.login-input{
+    color: white;
+}
 
 select {
     margin: 4px;

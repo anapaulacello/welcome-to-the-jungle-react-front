@@ -33,8 +33,6 @@ function App() {
           path="/animals"
           render={(props) => <Animals user={user} {...props} />} 
           ></AuthRoute>
-{/*           <Route path="/" component={Home}></Route>
-          <Route path="/animals" component={Animals}></Route> */}
         </Switch>
         </UserContext.Provider>
       </Router>
