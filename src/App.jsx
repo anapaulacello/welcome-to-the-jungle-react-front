@@ -1,10 +1,9 @@
 import './App.css';
 import { Route,Switch, BrowserRouter as Router } from "react-router-dom";
 import React,{useState} from "react";
-import {Home, Animals, Habitats} from "./pages"
-import { LoginForm, RegisterForm,AuthRoute, HabitatDetail} from "./components";
+import {Home, Animals, Habitats,New} from "./pages"
+import { LoginForm, RegisterForm,AuthRoute, FamilyForm, HabitatsForm} from "./components";
 import Navbar from "./core/Navbar"
-import New from './pages/New/New';
 
 export const UserContext=React.createContext(null);
 
@@ -41,6 +40,16 @@ function App() {
               authenticated={authenticated}
               path="/new"
               render={(props) => <New user={user} {...props} />}
+            />
+            <AuthRoute
+              authenticated={authenticated}
+              path="/newFamily"
+              render={(props) => <FamilyForm user={user} {...props} />}
+            />
+            <AuthRoute
+              authenticated={authenticated}
+              path="/newHabitat"
+              render={(props) => <HabitatsForm user={user} {...props} />}
             />
         </Switch>
       </UserContext.Provider>

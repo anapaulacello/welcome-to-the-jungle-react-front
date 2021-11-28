@@ -1,14 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import AnimalForm from '../../components/AnimalForm/AnimalForm'
-import HabitatsForm from '../../components/HbitatsForm/HabitatsForm'
 
 const New = () => {
     return (
-        <div>
-            <h1>Añade un nuevo habitat</h1>
-            <HabitatsForm></HabitatsForm>
+        <div>            
             <h1>Añade un nuevo animal</h1>
             <AnimalForm></AnimalForm>
+            <Link to="/newFamily"><h1>añade una nueva familia</h1></Link>
         </div>
     )
 }

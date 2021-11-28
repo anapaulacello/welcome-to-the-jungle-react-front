@@ -14,6 +14,7 @@ const DELETE_HABITAT=`${BASE_URL}/habitat/delete`
 const GET_HABITAT_BY_NAME=`${BASE_URL}/habitat/name/`
 
 const GET_FAMILY=`${BASE_URL}/family/allFamily`
+const CREATE_FAMILY=`${BASE_URL}/family/create`
 
 export {
     BASE_URL,
@@ -22,6 +23,7 @@ export {
     CREATE_HABITATS,
 
     GET_FAMILY,
+    CREATE_FAMILY,
 
     GET_ANIMALS,
     CREATE_ANIMAL,

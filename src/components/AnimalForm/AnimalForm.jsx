@@ -9,7 +9,7 @@ const INITIAL_STATE = {
     family:"",
   };
 
-const AnimalForm = (props) => {
+const AnimalForm = () => {
     const [animalForm, setAnimalForm] = useState(INITIAL_STATE);
     const [error, setError] = useState(null);
     const [option, setOption] = useState([]);
@@ -39,16 +39,15 @@ const AnimalForm = (props) => {
           }
     }
 
-    const handleInput = (e) => {
-        let { name, value } = e.target;
-        if(value =="on"){
-          value=true
-        }
-        else if(value ==null){
-          value = false
-        }
-        setAnimalForm({ ...animalForm, [name]: value });
-        
+  const handleInput = (e) => {
+      let { name, value } = e.target;
+      if(value =="on"){
+        value=true
+      }
+      else if(value ==null){
+        value = false
+      }
+      setAnimalForm({ ...animalForm, [name]: value });
     };
 
     return (
@@ -73,7 +72,7 @@ const AnimalForm = (props) => {
           name="isCarnivore"
           onChange={handleInput}
           id="floatingInput" />
-          <select  name="family" onChange={handleInput}>
+          <select  name="family" onClick={handleInput}>
           {option.map((family)=>(
               <option 
               value={family._id} 
