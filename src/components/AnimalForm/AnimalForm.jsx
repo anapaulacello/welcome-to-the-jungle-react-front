@@ -1,24 +1,23 @@
 import React,{ useState,useEffect }  from 'react'
-import {createAnimal,getAnimal} from "../../api/fetch_animals"
-
+import {createAnimal} from "../../api/fetch_animals"
+import{getFamily} from "../../api/fetch_family"
 
 const INITIAL_STATE = {
     id: "",
     name: "",
-    isCarnivore:false,
+    isCarnivore:null,
     family:"",
   };
 
 const AnimalForm = (props) => {
     const [animalForm, setAnimalForm] = useState(INITIAL_STATE);
     const [error, setError] = useState(null);
-    const [family, setFamily]=useState(false)
-    const [items, setItems] = useState([]);
+    const [option, setOption] = useState([]);
 
     const getData=async()=>{
         try {
-            const {data}=await getAnimal();
-            setItems(data.animal)
+            const {data}=await getFamily();
+            setOption(data.families)
         } catch (error) {
             setError(error);
         }
@@ -40,13 +39,14 @@ const AnimalForm = (props) => {
           }
     }
 
-    const handleSelect=(family)=>{
-        setFamily(family)
-        setAnimalForm({...animalForm, family})
-    }
-
     const handleInput = (e) => {
-        const { name, value } = e.target;
+        let { name, value } = e.target;
+        if(value =="on"){
+          value=true
+        }
+        else if(value ==null){
+          value = false
+        }
         setAnimalForm({ ...animalForm, [name]: value });
         
     };
@@ -71,14 +71,13 @@ const AnimalForm = (props) => {
           <input 
           type="checkbox"
           name="isCarnivore"
-          value={false}
-          onChange={handleSelect}
+          onChange={handleInput}
           id="floatingInput" />
-          <select  name="family">
-          {items.map((element)=>(
+          <select  name="family" onChange={handleInput}>
+          {option.map((family)=>(
               <option 
-              value={element._id} 
-              onChange={handleSelect}>{element.family.name}</option>
+              value={family._id} 
+              >{family.name}</option>
           ))}
           </select>
           <button type="submit">Register</button>

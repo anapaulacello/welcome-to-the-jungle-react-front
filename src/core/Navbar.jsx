@@ -20,22 +20,22 @@ const Navbar = () => {
     </div>
     <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className="list-container" onClick={showSidebar}>
-            <Link to="/">
-                <button>home</button>
+            <Link to="/" style={{ "text-decoration": "none" }}>
+                <p className="list_item">home</p>
             </Link>
             
-            <Link to="/animals">
-                <button>animals</button>
+            <Link to="/animals" style={{ "text-decoration": "none" }}>
+                <p className="list_item">animals</p>
             </Link>
             
-            <Link to="/habitats">
-                <button>habitats</button>
+            <Link to="/habitats" style={{ "text-decoration": "none" }}>
+                <p className="list_item">habitats</p>
             </Link>
-            <Link to="/new">
-                <button>Nuevo</button>
+            <Link to="/new" style={{ "text-decoration": "none" }}>
+                <p className="list_item">Nuevo</p>
             </Link>
             <Link to="/logout">
-                <button onClick={logoutsesion}>logout</button>
+                <p onClick={logoutsesion}>logout</p>
             </Link>
         </ul>
     </nav>

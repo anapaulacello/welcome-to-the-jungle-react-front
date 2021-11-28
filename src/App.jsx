@@ -2,7 +2,7 @@ import './App.css';
 import { Route,Switch, BrowserRouter as Router } from "react-router-dom";
 import React,{useState} from "react";
 import {Home, Animals, Habitats} from "./pages"
-import { LoginForm, RegisterForm,AuthRoute} from "./components";
+import { LoginForm, RegisterForm,AuthRoute, HabitatDetail} from "./components";
 import Navbar from "./core/Navbar"
 import New from './pages/New/New';
 

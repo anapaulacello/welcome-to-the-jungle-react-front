@@ -14,18 +14,18 @@ const Home = () => {
           <h3 className="contet-title">Contenido</h3>
             <ul className="content_list-container">
               <li className="content_list_item">
-              <Link to="/animals">
-                <a className="go-to-animals" >Animals</a>
+              <Link to="/animals" style={{ "text-decoration": "none" }}>
+                <p className="go-to-animals" >Animals</p>
               </Link>
               </li>
               <li className="content_list_item">
-              <Link to="/habitats">
-                <a className="go-to-habitat" >Habitat</a>
+              <Link to="/habitats" style={{ "text-decoration": "none" }}>
+                <p clpssName="go-to-habitat">Habitat</p>
               </Link>
               </li>
-              <li className="content_list_item">
-              <Link to="/new">
-                <a className="go-to-new" >Añade contenido</a>
+              <li className="content_list_item" >
+              <Link to="/new" style={{ "text-decoration": "none" }}>
+                <p className="go-to-new" >Añade contenido</p>
               </Link>
               </li>
             </ul>

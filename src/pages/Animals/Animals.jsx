@@ -1,6 +1,5 @@
 import React,{ useState, useEffect } from 'react'
 import { getAnimal,deleteAnimal } from '../../api/fetch_animals';
-import AnimalForm from '../../components/AnimalForm/AnimalForm';
 
 const Animals = () => {
     const [error, setError] = useState(null);

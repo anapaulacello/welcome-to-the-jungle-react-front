@@ -1,4 +1,4 @@
-import {DELETE_HABITAT,GET_HABITATS,CREATE_HABITATS} from "./fetch_routes"
+import {DELETE_HABITAT,GET_HABITATS,CREATE_HABITATS,GET_HABITAT_BY_NAME} from "./fetch_routes"
 
 export const createHabitat=async(form)=>{
   const createHabitatFetch=await fetch(CREATE_HABITATS,{
@@ -50,4 +50,21 @@ export const deleteHabitat=async(_id)=>{
       throw new Error("No se ha podido eliminar el habitat", res.message);
     }
     return res;
+}
+
+export const getHabitatByName=async(name)=>{
+  const createHabitatFetch=await fetch(`${GET_HABITAT_BY_NAME}${name}`,{
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      }
+  })
+  const res = await createHabitatFetch.json();
+  if (!createHabitatFetch) {
+    throw new Error("No se ha podido registrar el habitat", res.message);
+  }
+  return res;
 }
