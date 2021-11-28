@@ -1,54 +1,46 @@
 import React,{ useState, useEffect } from 'react'
-import { GET_ANIMALS } from '../../api/fetch_routes'
-import axios from 'axios'
-import { Spinner } from '../../components'
+import { getAnimal,deleteAnimal } from '../../api/fetch_animals';
+import AnimalForm from '../../components/AnimalForm/AnimalForm';
 
 const Animals = () => {
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        axios(GET_ANIMALS).then(
-            (res) => {
-                setItems(res.data.data.animal);
-                console.log(items)
-                setIsLoaded(true);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
-    }, []);
-    if (error) {
-        return <div>Error:{error.message}</div>
-    } else if (!isLoaded) {
-        return <Spinner></Spinner>
-    } else {
-    return (
-    <div>
-        <ul className="list-container">
-         {items.map((item)=>(
-            <li className="list-card" key={item._id}>
-                <h1>{item.id}</h1>
-                <h2>nombre:{item.name}</h2>
-                {item.isCarnivore?
-                <p>Carinivoro</p>:
-                <p>No es carnivoro</p>
-                }
-                <p>{item.family.name}</p>
-                {item.family.livingInGroup?
-                <p>Vive en manada</p>:
-                <p>Vive solitario</p>
-                }
-            </li>
-        ))} 
-        </ul>
+    const getData=async()=>{
+        try {
+            const {data}=await getAnimal();
+            setItems(data.animal)
+        } catch (error) {
+            setError(error);
+        }
+    }
+    useEffect(async () => {
+        getData();
+      }, []);
 
+    const delAnimal = async (id) => {
+        const option = window.confirm("Estás Seguro que deseas Eliminar el elemento ");
+        if(option){
+            await deleteAnimal(id)
+        }
+        getData();
+    };
+
+    return (
+        <div className="animal-container">
+        {items.map((element)=>(
+            <div>
+                <h1>{element.id}</h1>
+                <h2>{element.name}</h2>
+                {element.isCarnivore?<p>come carne</p>:<p>no come carne</p>}
+                <p>{element.family.name}</p>
+                <button onClick={() => {
+                    delAnimal(element._id);
+                  }}>borrar</button>
+            </div>
+        ))}
     </div>
     )
-    }
 }
 
 export default Animals

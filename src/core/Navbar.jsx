@@ -20,7 +20,9 @@ const Navbar = () => {
             <Link to="/habitats">
                 <button>habitats</button>
             </Link>
-            
+            <Link to="/new">
+                <button>Nuevo</button>
+            </Link>
             <Link to="/logout">
                 <button onClick={logoutsesion}>logout</button>
             </Link>
