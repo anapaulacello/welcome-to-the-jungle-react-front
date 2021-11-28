@@ -7,28 +7,23 @@ const Navbar = () => {
     const logoutsesion =async()=>{
         await logout()
       }
-    return (
-        <>
-            {user?(
+    return(
+    <>
             <Link to="/">
                 <button>home</button>
             </Link>
-            ):null}
-            {user?(
+            
             <Link to="/animals">
                 <button>animals</button>
             </Link>
-            ):null}
-            {user?(
-            <Link to="/habiatats">
+            
+            <Link to="/habitats">
                 <button>habitats</button>
             </Link>
-            ):null}
-            {user?(
+            
             <Link to="/logout">
                 <button onClick={logoutsesion}>logout</button>
             </Link>
-            ):null}
         </>
     )
 }
