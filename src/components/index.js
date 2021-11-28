@@ -6,5 +6,6 @@ import Find from "./Find/Find"
 import HabitatDetail from "./HbitatDetail/HabitatDetail"
 import FamilyForm from "./FamilyForm/FamilyForm"
 import HabitatsForm from "./HbitatsForm/HabitatsForm"
+import FindAnimal from "./FindAninmal/FindAnimal"
 
-export {Spinner,RegisterForm,LoginForm,AuthRoute,Find,HabitatDetail,FamilyForm,HabitatsForm}
+export {Spinner,RegisterForm,LoginForm,AuthRoute,Find,HabitatDetail,FamilyForm,HabitatsForm,FindAnimal}

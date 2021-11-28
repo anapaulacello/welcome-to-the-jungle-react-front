@@ -1,4 +1,4 @@
-import { GET_ANIMALS,DELETE_ANIMALS, CREATE_ANIMAL} from "./fetch_routes";
+import { GET_ANIMALS,DELETE_ANIMALS, CREATE_ANIMAL,GET_ANIMAL_BY_NAME} from "./fetch_routes";
 
 
 export const createAnimal=async(form)=>{
@@ -51,5 +51,22 @@ export const getAnimal = async() => {
       throw new Error("No se ha podido eliminar el Animal", res.message);
     }
     return res;
+}
+
+export const getAnimalByName=async(name)=>{
+  const createAnimalFetch=await fetch(`${GET_ANIMAL_BY_NAME}${name}`,{
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      }
+  })
+  const res = await createAnimalFetch.json();
+  if (!createAnimalFetch) {
+    throw new Error("No se ha podido registrar el Animal", res.message);
+  }
+  return res;
 }
 
