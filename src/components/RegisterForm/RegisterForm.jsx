@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../../api/fetch_user";
 import "./RegisterForm.css";
-import { useHistory } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 
 const INITIAL_STATE = {
   email: "",
@@ -33,6 +33,9 @@ const RegisterForm = (props) => {
 
   return (
       <div class="form-floating">
+        <Link to="/">
+          <a className="go-back-home" >«««Atras«««</a>
+        </Link>
         <form onSubmit={submitForm} className="registerForm">
           <input 
           type="text"

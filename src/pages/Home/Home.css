@@ -1,19 +1,42 @@
-.autentification{
+.home-container{
     background-image: url("https://imgur.com/sZMsTkk.jpg");
     height: 100vh;
     text-align: center;
     top: 48vh;
+    padding:70px;
 }
 
-.login,
-.register{
-    text-decoration: none;
-    margin: 30px 10px;
-    border: 2px solid #fff;
-    color: white; 
-    background-color:transparent;
-    padding: 6px 20px;
-    border-radius: 30px;
-    letter-spacing: 1px;
-    font-size: larger;
+.home_title{
+    color: white;
+    padding-top:70px;
+    font-size: 60px;
+}
+
+.content-container{
+    border:2px solid white;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contet-title{
+    color: white;
+    font-size: 40px;
+}
+
+.content_list-container{
+    list-style: none;
+    padding: 0;
+}
+
+.content_list_item{
+    padding: 20px;
+
+}
+
+.go-to-animals,
+.go-to-habitat,
+.go-to-new{
+    color: white;
 }

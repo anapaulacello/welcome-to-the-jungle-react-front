@@ -29,6 +29,9 @@ const LoginForm = () => {
 
   return (
     <div class="form-floating">
+      <Link to="/">
+        <a className="go-back-home" >«««Atras«««</a>
+      </Link>
       <form onSubmit={submitForm} className="login-form">
         <input
           className="login-input"
