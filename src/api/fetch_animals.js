@@ -53,8 +53,8 @@ export const getAnimal = async() => {
     return res;
 }
 
-export const getAnimalByName=async(name)=>{
-  const createAnimalFetch=await fetch(`${GET_ANIMAL_BY_NAME}${name}`,{
+export const getAnimalByName=async(id)=>{
+  const createAnimalFetch=await fetch(`${GET_ANIMAL_BY_NAME}/${id}`,{
       method: "GET",
       credentials: "include",
       headers: {

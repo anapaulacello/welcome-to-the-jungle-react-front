@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from 'react'
 import { getAnimal,deleteAnimal } from '../../api/fetch_animals';
 import { FindAnimal } from '../../components';
 import "./Animals.css"
+import {Link} from 'react-router-dom'
 
 const Animals = () => {
     const [error, setError] = useState(null);
@@ -34,6 +35,8 @@ const Animals = () => {
             <div className="animals-list">
             {items.map((element)=>(
                 <div className="animals-card">
+                <Link to={`/${element.id}`}>
+                <div>
                     <h1>{element.id}</h1>
                     <h2>{element.name}</h2>
                     {element.isCarnivore?<p>come carne</p>:<p>no come carne</p>}
@@ -42,6 +45,8 @@ const Animals = () => {
                     onClick={() => {
                         delAnimal(element._id);
                     }}>borrar</button>
+                </div>
+                </Link>
                 </div>
             ))}
             </div>

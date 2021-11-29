@@ -31,6 +31,11 @@ function App() {
               path="/animals"
               render={(props) => <Animals user={user} {...props} />}
             />
+            <AuthRoute
+              authenticated={authenticated}
+              path="/animals/:id"
+              render={(props) => <Animals user={user} {...props} />}
+            />
           <AuthRoute
               authenticated={authenticated}
               path="/habitats"

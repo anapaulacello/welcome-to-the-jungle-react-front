@@ -36,7 +36,7 @@ const Habitats = () => {
         <div className="habitats-list">
         {items.map((element)=>(
             <div className="habitat_card-container">
-            <Link to={`/${element._id}`}>
+            <Link to={`/${element.id}`}>
             <div className="habitat_properties">
                 <h1>{element.id}</h1>
                 <h2>{element.name}</h2>
