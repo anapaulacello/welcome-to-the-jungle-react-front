@@ -34,7 +34,7 @@ const Find = () => {
         console.log("handle input",value)
     };
     return (
-        <div className="find-container">
+        <div className="find-habitat-container">
             <input
                 type="text"
                 onChange={handleInput}
@@ -45,6 +45,8 @@ const Find = () => {
                 <div className="found_card">
                     <h1>{found.id}</h1>
                     <h1>{found.name}</h1>
+                    <p>{found.location}</p>
+                    <p>{found.mode}</p>
                 </div>
             ):null}
         </div>
