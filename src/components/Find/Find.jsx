@@ -35,12 +35,16 @@ const Find = () => {
     };
     return (
         <div className="find-habitat-container">
+        <div className="find-habitat_intput-button">
             <input
-                type="text"
-                onChange={handleInput}
-                className="find-input"
+            className="form-control find-input" id="formGroupExampleInput"
+            type="text"
+            onChange={handleInput}
+            placeholder="nombre de habitat"
             />
-            <button onClick={getData}>buscar</button>
+            <button className="btn btn-success "  
+            onClick={getData}>buscar</button>
+        </div>
             {found?(
                 <div className="found_card">
                     <h1>{found.id}</h1>

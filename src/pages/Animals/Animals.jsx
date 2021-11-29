@@ -29,18 +29,22 @@ const Animals = () => {
 
     return (
         <div className="animals-container">
-        <FindAnimal></FindAnimal>
-        {items.map((element)=>(
-            <div>
-                <h1>{element.id}</h1>
-                <h2>{element.name}</h2>
-                {element.isCarnivore?<p>come carne</p>:<p>no come carne</p>}
-                <p>{element.family.name}</p>
-                <button onClick={() => {
-                    delAnimal(element._id);
-                  }}>borrar</button>
+            <h1 className="animals-title">Animales</h1>
+            <FindAnimal></FindAnimal>
+            <div className="animals-list">
+            {items.map((element)=>(
+                <div className="animals-card">
+                    <h1>{element.id}</h1>
+                    <h2>{element.name}</h2>
+                    {element.isCarnivore?<p>come carne</p>:<p>no come carne</p>}
+                    <p>{element.family.name}</p>
+                    <button className="btn btn-secondary "
+                    onClick={() => {
+                        delAnimal(element._id);
+                    }}>borrar</button>
+                </div>
+            ))}
             </div>
-        ))}
     </div>
     )
 }

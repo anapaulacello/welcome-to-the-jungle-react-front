@@ -30,8 +30,10 @@ const Habitats = () => {
     };
 
     return (
-    <div className="habitat-container">
-    <div className="find-container"><Find></Find></div>
+    <div className="habitats-container">
+        <h1 className="habitas-title">Habitats</h1>
+        <Find></Find>
+        <div className="habitats-list">
         {items.map((element)=>(
             <div className="habitat_card-container">
             <Link to={`/${element._id}`}>
@@ -44,11 +46,11 @@ const Habitats = () => {
             </Link>
                 <button onClick={() => {
                     delHab(element._id);
-                  }}>borrar
+                }}>borrar
                 </button>
             </div>
-        
         ))}
+        </div>
     </div>
     )
     

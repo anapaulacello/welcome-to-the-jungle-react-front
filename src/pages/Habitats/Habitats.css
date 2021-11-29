@@ -1,9 +1,17 @@
-.habitat-container{
+.habitats-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     background-color: #deffb0;
     min-height: 100vh;
+    align-items:center;
+}
+
+.habitats-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .habitat_card-container{
     border: 1px solid black;

@@ -7,7 +7,7 @@
 .familyForm{
     display: flex;
     flex-direction: column;
-    padding: 40px ;
+    padding: 25px ;
     background-color: #e7e7e6;
     border-radius: 30px;
     align-items: center;

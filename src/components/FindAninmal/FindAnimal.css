@@ -1,8 +1,8 @@
-.find-habitat-container{
+.find-animal-container{
     display:flex;
     flex-direction:column;
 }
-.find-habitat_intput-button{
+.find-animal_intput-button{
     display:flex;
     flex-direction: row;
     max-width:400px;
