@@ -12,11 +12,11 @@ const FindAnimal = () => {
     })
     const getData=async()=>{
         try {
-            console.log("entro")
             const {data}=await getAnimalByName(animalName);
-            setFound(data.aniamals[0])
+            setFound(data.Animal[0])
             if(data){
-                console.log("datos de data",data.habitat[0])
+                console.log("entro")
+                console.log("datos de data",data.Animal[0])
                 console.log("datos de found",found)
             }
         } catch (error) {
