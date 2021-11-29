@@ -9,22 +9,29 @@ const Home = () => {
     console.log(user)
     return (
         <div className=" home-container">
+        <div className=" home_title-login-container">
           <h1 className=" animate__animated animate__fadeIn home_title">Welcome to the Jungle</h1>
+          {user==null?
+          (<Link to="/login" style={{ "text-decoration": "none" }}>
+            <p role="button" className="go-to-login" >Login</p>
+          </Link>
+          ):null}
+        </div>
           <div className="  animate__animated animate__fadeIn content-container">
             <ul className="content_list-container">
               <li className="content_list_item">
               <Link to="/animals" style={{ "text-decoration": "none" }}>
-                <p className="go-to" >Animals ►</p>
+                <p role="button"  className="go-to" >Animals ►</p>
               </Link>
               </li>
               <li className="content_list_item">
               <Link to="/animals" style={{ "text-decoration": "none" }}>
-                <p className="go-to" >Habitats ►</p>
+                <p role="button"  className="go-to" >Habitats ►</p>
               </Link>
               </li>
               <li className="content_list_item" >
               <Link to="/new" style={{ "text-decoration": "none" }}>
-                <p className="go-to" >Añadir ►</p>
+                <p role="button"  className="go-to" >Añadir ►</p>
               </Link>
               </li>
             </ul>

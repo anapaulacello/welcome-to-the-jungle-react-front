@@ -4,14 +4,26 @@
     text-align: center;
     top: 48vh;
 }
-.home-login-button{
-    float: right;
+.home_title-login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ .go-to-login{
     cursor: pointer;
-    color: #fff;
+    background-color: white;
+    font-weight: bold;
+    color: #121203;
     border: 2px solid white;
-    padding: 7px;
+    padding: 7px 20px;
     border-radius:20px;
-    margin: 20px;
+    margin-top: 20px;
+  } 
+
+  .go-to-login:hover{
+      background-color: transparent;
+      transition: 0.2s ease-in-out;
+      color:white;
   }
   
 .home_title{

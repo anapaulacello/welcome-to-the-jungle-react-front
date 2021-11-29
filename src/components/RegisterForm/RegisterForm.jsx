@@ -62,7 +62,7 @@ const RegisterForm = (props) => {
           value={registerForm.password}
           onChange={handleInput}
           placeholder="Password"
-          className="form-control" 
+          className="register-input" 
           id="floatingInput" 
           placeholder="Password"/>
           <button className="register-button" type="submit">Register</button>
