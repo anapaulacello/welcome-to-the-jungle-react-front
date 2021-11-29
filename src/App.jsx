@@ -41,16 +41,6 @@ function App() {
               path="/new"
               render={(props) => <New user={user} {...props} />}
             />
-            <AuthRoute
-              authenticated={authenticated}
-              path="/newFamily"
-              render={(props) => <FamilyForm user={user} {...props} />}
-            />
-            <AuthRoute
-              authenticated={authenticated}
-              path="/newHabitat"
-              render={(props) => <HabitatsForm user={user} {...props} />}
-            />
         </Switch>
       </UserContext.Provider>
     </Router>

@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
 import {createFamily} from "../../api/fetch_family"
 import {getHabitat} from "../../api/fetch_habitat"
+import "./FamilyForm.css"
 
 const INITIAL_STATE = {
     id: "",
@@ -51,38 +51,44 @@ const FamilyForm = () => {
         setFamilyForm({ ...familyForm, [name]: value });
       };
     return (
-        <div>
+        <div className="familyForm-container">
         <form onSubmit={submitForm} className="familyForm">
-            <input 
+            <input class="form-control familyForm_item" id="formGroupExampleInput"
             type="text"
             name="id"
             value={familyForm.id}
             onChange={handleInput} 
             id="floatingInput" 
             placeholder="id"/>
-            <input 
+            <input class="form-control familyForm_item" id="formGroupExampleInput"
             type="text"
             name="name"
             value={familyForm.name}
             onChange={handleInput}
             id="floatingInput" 
             placeholder="name"/>
-            <input 
-            type="checkbox"
-            name="livingInGroup"
-            onChange={handleInput}
-            id="floatingInput" />
-            <select  name="habitat" onClick={handleInput}>
+            <select  class="form-select familyForm_item" name="family"
+            name="habitat" onClick={handleInput}>
             {option.map((habitat)=>(
                 <option 
                 value={habitat._id} 
                 >{habitat.name}</option>
             ))}
             </select>
-            <button type="submit">Register</button>
+            <div className="checkbox-and-button">
+              <div className="checkbox-container">
+                <input 
+                type="checkbox"
+                name="livingInGroup"
+                onChange={handleInput}
+                id="floatingInput" />
+                <label class="form-check-label" for="exampleCheck1">¿vive en grupo?
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-secondary animalForm_item">Register</button>
             {error && <div style={{ color: "red" }}>{error}</div>}
             </form>
-            <Link to="/newHabitat">crear nuevo habitat</Link>
         </div>
     )
 }

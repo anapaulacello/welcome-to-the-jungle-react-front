@@ -1,0 +1,21 @@
+.add-new-container{
+    background-color: #deffb0;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-new-container_title{
+    padding: 30px auto 0 auto;
+}
+
+.add-new-container_buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.add-new_family_button{
+    margin: 15px;
+}

@@ -1,7 +1,7 @@
 import React,{ useState,useEffect }  from 'react'
 import {createAnimal} from "../../api/fetch_animals"
 import{getFamily} from "../../api/fetch_family"
-
+import "./AnimalForm.css"
 const INITIAL_STATE = {
     id: "",
     name: "",
@@ -51,37 +51,43 @@ const AnimalForm = () => {
     };
 
     return (
-        <div>
-        <form onSubmit={submitForm} className="animalForm">
-          <input 
+        <div className="animalsForm-container">
+         <form onSubmit={submitForm} className="animalForm">
+          <input class="form-control animalForm_item" id="formGroupExampleInput"
           type="text"
           name="id"
           value={animalForm.id}
           onChange={handleInput} 
           id="floatingInput" 
           placeholder="id"/>
-          <input 
+          <input class="form-control animalForm_item" id="formGroupExampleInput"
           type="text"
           name="name"
           value={animalForm.name}
           onChange={handleInput}
           id="floatingInput" 
           placeholder="name"/>
-          <input 
-          type="checkbox"
-          name="isCarnivore"
-          onChange={handleInput}
-          id="floatingInput" />
-          <select  name="family" onClick={handleInput}>
+          <select class="form-select animalForm_item" name="family" onClick={handleInput}>
           {option.map((family)=>(
               <option 
               value={family._id} 
               >{family.name}</option>
           ))}
           </select>
-          <button type="submit">Register</button>
+          <div className="checkbox-and-button">
+            <div className="checkbox-container">
+              <input 
+              class="form-check-input"  id="flexCheckDefault"
+              type="checkbox"
+              name="isCarnivore"
+              onChange={handleInput}
+              id="floatingInput"/>
+              <label class="form-check-label" for="exampleCheck1">¿es carnívoro?</label>
+            </div>
+            <button type="submit" class="btn btn-secondary animalForm_item">Submit</button>
+          </div>
         {error && <div style={{ color: "red" }}>{error}</div>}
-        </form>
+        </form> 
       </div>
     )
 }

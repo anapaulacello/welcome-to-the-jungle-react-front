@@ -15,7 +15,7 @@ height: 100vh;
     max-width: 900px;
 }
 
-.form-control{
+.register-input{
 text-decoration: none;
 margin: 10px;
 border: 2px solid #fff;
@@ -25,11 +25,8 @@ border-radius: 30px;
 letter-spacing: 1px;
 font-size: larger;
 }
-.form-control::placeholder{
-    color: white;
-    text-align: center;
-}
-.form-control{
+
+.register-input{
     color: white;
 } 
 

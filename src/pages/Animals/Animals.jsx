@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from 'react'
 import { getAnimal,deleteAnimal } from '../../api/fetch_animals';
 import { FindAnimal } from '../../components';
+import "./Animals.css"
 
 const Animals = () => {
     const [error, setError] = useState(null);
@@ -27,7 +28,7 @@ const Animals = () => {
     };
 
     return (
-        <div className="animal-container">
+        <div className="animals-container">
         <FindAnimal></FindAnimal>
         {items.map((element)=>(
             <div>
