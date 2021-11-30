@@ -3,6 +3,7 @@
     min-height: 100vh;
     text-align: center;
     top: 48vh;
+    background-attachment: fixed;
 }
 .home_title-login-container{
     display: flex;
