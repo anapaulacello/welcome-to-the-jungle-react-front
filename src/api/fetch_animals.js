@@ -35,22 +35,22 @@ export const getAnimal = async() => {
     return res;
   }
 
-  export const deleteAnimal=async(_id)=>{
-    const deleteAnimalFetch=await fetch(DELETE_ANIMALS,{
-        method: "DELETE",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*"
-        },
-        body:JSON.stringify({"_id":_id})
-    })
-    const res = await deleteAnimalFetch.json();
-    if (!deleteAnimal) {
-      throw new Error("No se ha podido eliminar el Animal", res.message);
-    }
-    return res;
+export const deleteAnimal=async(_id)=>{
+  const deleteAnimalFetch=await fetch(DELETE_ANIMALS,{
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      },
+      body:JSON.stringify({"_id":_id})
+  })
+  const res = await deleteAnimalFetch.json();
+  if (!deleteAnimal) {
+    throw new Error("No se ha podido eliminar el Animal", res.message);
+  }
+  return res;
 }
 
 export const getAnimalByName=async(id)=>{

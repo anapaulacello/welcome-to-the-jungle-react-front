@@ -2,7 +2,7 @@ import './App.css';
 import { Route,Switch, BrowserRouter as Router } from "react-router-dom";
 import React,{useState} from "react";
 import {Home, Animals, Habitats,New} from "./pages"
-import { LoginForm, RegisterForm,AuthRoute, FamilyForm, HabitatsForm} from "./components";
+import { LoginForm, RegisterForm,AuthRoute} from "./components";
 import Navbar from "./core/Navbar"
 
 export const UserContext=React.createContext(null);
