@@ -14,12 +14,12 @@
     justify-content: space-around;
 }
 .habitat_card-container{
-    border: 1px solid black;
-    width: 250px;
-    height: auto;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 20px
+    border: 2px solid black;
+    border-radius:20px;
+    margin: 20px;
+    padding:10px;
+    min-width:200px;
+    text-align: center;
 }
 .habitat_properties_item{
     color: black;
