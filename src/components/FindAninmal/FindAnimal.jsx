@@ -43,7 +43,6 @@ const FindAnimal = () => {
             type="text"
             onChange={handleInput}
             placeholder="nombre de animal"
-            value={found.name.toLocaleLowerCase()}
             />
              <button className="btn btn-success " onClick={getData}>buscar</button>
         </div>
