@@ -38,10 +38,12 @@ const FindAnimal = () => {
         <div className="find-animal-container">
         <div className="find-animal_intput-button">
             <input
-            className="form-control find-input" id="formGroupExampleInput"
+            className="form-control find-input" 
+            id="formGroupExampleInput"
             type="text"
             onChange={handleInput}
             placeholder="nombre de animal"
+            value={found.name.toLocaleLowerCase()}
             />
              <button className="btn btn-success " onClick={getData}>buscar</button>
         </div>
