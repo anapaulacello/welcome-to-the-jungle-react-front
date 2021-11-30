@@ -1,18 +1,21 @@
 import React,{ useState, useEffect } from 'react'
 import { getAnimal,deleteAnimal } from '../../api/fetch_animals';
-import { FindAnimal } from '../../components';
+import { FindAnimal ,Spinner} from '../../components';
 import "./Animals.css"
 import {Link} from 'react-router-dom'
 
 const Animals = () => {
     const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
     const getData=async()=>{
         try {
             const {data}=await getAnimal();
             setItems(data.animal)
+            setIsLoaded(true);
         } catch (error) {
+            setIsLoaded(true);
             setError(error);
         }
     }
@@ -27,7 +30,11 @@ const Animals = () => {
         }
         getData();
     };
-
+    if (error) {
+        return <div>Error:{error.message}</div>
+    } else if (!isLoaded) {
+        return <Spinner></Spinner>
+    } else {
     return (
         <div className="animals-container">
             <h1 className="animals-title">Animales</h1>
@@ -52,7 +59,7 @@ const Animals = () => {
             ))}
             </div>
     </div>
-    )
+    )}
 }
 
 export default Animals

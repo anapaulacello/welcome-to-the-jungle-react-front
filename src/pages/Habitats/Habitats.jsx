@@ -1,20 +1,23 @@
 
 import React,{ useState, useEffect }from 'react'
 import { deleteHabitat, getHabitat } from '../../api/fetch_habitat';
-import {Find} from '../../components'
+import {Find,Spinner} from '../../components'
 import "./Habitats.css"
 import {Link} from 'react-router-dom'
 
 const Habitats = () => {
     const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
     const getData=async()=>{
         try {
             const {data}=await getHabitat();
             setItems(data.habitats)
+            setIsLoaded(true);
         } catch (error) {
             setError(error);
+            setIsLoaded(true);
         }
     }
     useEffect(async () => {
@@ -28,7 +31,11 @@ const Habitats = () => {
         }
     getData();
     };
-
+    if (error) {
+        return <div>Error:{error.message}</div>
+    } else if (!isLoaded) {
+        return <Spinner></Spinner>
+    } else {
     return (
     <div className="habitats-container">
         <h1 className="habitas-title">Habitats</h1>
@@ -52,7 +59,7 @@ const Habitats = () => {
         ))}
         </div>
     </div>
-    )
+    )}
     
 }
 
