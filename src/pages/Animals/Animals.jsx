@@ -35,18 +35,19 @@ const Animals = () => {
             <div className="animals-list">
             {items.map((element)=>(
                 <div className="animals-card">
-                <Link to={`/${element.id}`}>
+                <Link to={`/${element.id}`} style={{ "text-decoration": "none" }}>
                 <div>
-                    <h1>{element.id}</h1>
-                    <h2>{element.name}</h2>
-                    {element.isCarnivore?<p>come carne</p>:<p>no come carne</p>}
-                    <p>{element.family.name}</p>
-                    <button className="btn btn-secondary "
+                    <h1 className="habitat_properties_item">{element.id}</h1>
+                    <h2 className="habitat_properties_item">{element.name}</h2>
+                    {element.isCarnivore?<p className="habitat_properties_item">come carne</p>
+                    :<p className="habitat_properties_item">no come carne</p>}
+                    <p className="habitat_properties_item">{element.family.name}</p>
+                </div>
+                </Link>
+                <button className="btn btn-secondary "
                     onClick={() => {
                         delAnimal(element._id);
                     }}>borrar</button>
-                </div>
-                </Link>
                 </div>
             ))}
             </div>

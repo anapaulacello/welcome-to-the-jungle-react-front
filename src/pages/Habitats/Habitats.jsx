@@ -36,15 +36,15 @@ const Habitats = () => {
         <div className="habitats-list">
         {items.map((element)=>(
             <div className="habitat_card-container">
-            <Link to={`/${element.id}`}>
+            <Link to={`/${element.id}`} style={{ "text-decoration": "none" }}>
             <div className="habitat_properties">
-                <h1>{element.id}</h1>
-                <h2>{element.name}</h2>
-                <p>{element.location}</p>
-                <p>{element.mode}</p>
+                <h1 className="habitat_properties_item">{element.id}</h1>
+                <h2 className="habitat_properties_item" >{element.name}</h2>
+                <p className="habitat_properties_item" >{element.location}</p>
+                <p className="habitat_properties_item" >{element.mode}</p>
             </div>
             </Link>
-                <button onClick={() => {
+                <button className="btn btn-secondary " onClick={() => {
                     delHab(element._id);
                 }}>borrar
                 </button>

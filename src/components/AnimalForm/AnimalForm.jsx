@@ -54,19 +54,19 @@ const AnimalForm = () => {
         <div className="animalsForm-container">
          <form onSubmit={submitForm} className="animalForm">
           <input class="form-control animalForm_item" id="formGroupExampleInput"
-          type="text"
+          type="number" min="1"
           name="id"
           value={animalForm.id}
           onChange={handleInput} 
           id="floatingInput" 
-          placeholder="id"/>
+          placeholder="número de id"/>
           <input class="form-control animalForm_item" id="formGroupExampleInput"
           type="text"
           name="name"
           value={animalForm.name}
           onChange={handleInput}
           id="floatingInput" 
-          placeholder="name"/>
+          placeholder="nombre"/>
           <select class="form-select animalForm_item" name="family" onClick={handleInput}>
           {option.map((family)=>(
               <option 
@@ -84,7 +84,7 @@ const AnimalForm = () => {
               id="floatingInput"/>
               <label class="form-check-label" for="exampleCheck1">¿es carnívoro?</label>
             </div>
-            <button type="submit" class="btn btn-secondary animalForm_item">Submit</button>
+            <button type="submit" class="btn btn-secondary animalForm_item">añadir</button>
           </div>
         {error && <div style={{ color: "red" }}>{error}</div>}
         </form> 

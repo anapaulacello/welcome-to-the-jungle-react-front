@@ -54,19 +54,19 @@ const FamilyForm = () => {
         <div className="familyForm-container">
         <form onSubmit={submitForm} className="familyForm">
             <input class="form-control familyForm_item" id="formGroupExampleInput"
-            type="text"
+            type="number" min="1"
             name="id"
             value={familyForm.id}
             onChange={handleInput} 
             id="floatingInput" 
-            placeholder="id"/>
+            placeholder="numero de id"/>
             <input class="form-control familyForm_item" id="formGroupExampleInput"
             type="text"
             name="name"
             value={familyForm.name}
             onChange={handleInput}
             id="floatingInput" 
-            placeholder="name"/>
+            placeholder="nombre"/>
             <select  class="form-select familyForm_item" name="family"
             name="habitat" onClick={handleInput}>
             {option.map((habitat)=>(
@@ -86,7 +86,7 @@ const FamilyForm = () => {
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-secondary animalForm_item">Register</button>
+            <button type="submit" class="btn btn-secondary animalForm_item">añadir</button>
             {error && <div style={{ color: "red" }}>{error}</div>}
             </form>
         </div>

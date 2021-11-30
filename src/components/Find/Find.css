@@ -11,3 +11,11 @@
 .btn-success{
     margin: 15px;
 }
+
+.found_card{
+    border-radius:20px;
+    margin: 20px;
+    padding:10px;
+    min-width:200px;
+    text-align: center;
+}

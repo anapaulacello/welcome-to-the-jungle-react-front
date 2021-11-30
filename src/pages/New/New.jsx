@@ -26,6 +26,9 @@ const New = () => {
                     <h1 className=" add-new-container_title">Añade un nuevo animal</h1>
                     <AnimalForm></AnimalForm>
                     <button className="btn btn-success " onClick={changeStep}>Añadir Familia</button>
+                    <Link to="/animals">
+                            <button className="add-new_family_button  btn btn-success ">ver animales</button>
+                    </Link>
                 </div>
 
             )
