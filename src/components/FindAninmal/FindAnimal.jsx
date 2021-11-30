@@ -9,7 +9,7 @@ const FindAnimal = () => {
         id:"",
         name:"",
         isCarnivore:"",
-        family:""
+        family:{name:""}
     })
 
     const getData=async()=>{
@@ -17,7 +17,6 @@ const FindAnimal = () => {
             const {data}=await getAnimalByName(animalName);
             setFound(data.Animal[0])
             if(data){
-                console.log("entro")
                 console.log("datos de data",data.Animal[0])
                 console.log("datos de found",found)
             }
@@ -46,14 +45,14 @@ const FindAnimal = () => {
             />
              <button className="btn btn-success " onClick={getData}>buscar</button>
         </div>
-        {found?(
+          {found?(
             <div className="found_card">
                 <h1>{found.id}</h1>
                 <h1>{found.name}</h1>
                 <p>{found.isCarnivore}</p>
-                <p>{found.family}</p>
+                <p>{found.family.name}</p>
             </div>
-        ):null}
+        ):null} 
         </div>
     )
 }

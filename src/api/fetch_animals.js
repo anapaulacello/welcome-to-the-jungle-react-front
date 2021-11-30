@@ -54,7 +54,7 @@ export const getAnimal = async() => {
 }
 
 export const getAnimalByName=async(id)=>{
-  const createAnimalFetch=await fetch(`${GET_ANIMAL_BY_NAME}/${id}`,{
+  const createAnimalFetch=await fetch(`${GET_ANIMAL_BY_NAME}${id}`,{
       method: "GET",
       credentials: "include",
       headers: {
